@@ -13,7 +13,7 @@ function App() {
   }, []);
 
   const fetchRequests = () => {
-    fetch("http://localhost:8080/requests")
+    fetch("https://commuhelp-backend.onrender.com/requests")
       .then(res => res.json())
       .then(data => setRequests(data))
       .catch(err => console.error(err));
@@ -23,7 +23,7 @@ function App() {
   const submitRequest = () => {
     if (message.trim() === "") return;
 
-    fetch("http://localhost:8080/requests", {
+    fetch("https://commuhelp-backend.onrender.com/requests", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ message })
